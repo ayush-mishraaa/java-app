@@ -1,0 +1,30 @@
+package com.example;
+
+import java.io.IOException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/")
+public class HelloServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(
+            HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        response.getWriter().println(
+            "<html>" +
+            "<head><title>My Java App</title></head>" +
+            "<body>" +
+            "<h1>Hello from Java + Tomcat!</h1>" +
+            "<p>Application is running successfully.</p>" +
+            "</body>" +
+            "</html>"
+        );
+    }
+}
